@@ -540,6 +540,12 @@ footer {
   :root {
     --cubie: 38px;
   }
+  .sticker {
+    width: var(--cubie);
+    height: var(--cubie);
+    border-width: 1px;
+    border-radius: 3px;
+  }
   .topbar {
     height: 68px;
     padding: 0 18px;
@@ -581,15 +587,7 @@ footer {
     width: 190px;
   }
   .controls {
-    padding: 16px;
-  }
-  .move-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    padding: 14px 0;
-  }
-  .move-grid b {
-    font-size: 21px;
+    display: none;
   }
   .hint {
     font-size: 7px;

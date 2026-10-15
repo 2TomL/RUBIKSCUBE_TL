@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#090a0d">
+	<title>Tom Lamers | Rubik's Cube</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="page-glow" aria-hidden="true"></div>
+	<header class="topbar">
+		<a class="brand" href="#cube" aria-label="Tom Lamers Rubik's Cube home">
+			<span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+			<span><b>Tom</b> Lamers</span>
+		</a>
+		<div class="eyebrow">INTERACTIVE PROJECT <span>/</span> 3D PUZZLE</div>
+		<a class="back-link" href="https://2toml.github.io/TL_Portfolio/">PORTFOLIO <span>↗</span></a>
+	</header>
+
+	<main id="cube" class="layout">
+		<section class="intro">
+			<p class="kicker">THE CUBE LAB <span>01</span></p>
+			<div class="stats" aria-label="Spelstatistieken">
+				<div><span id="move-count">00</span><small>ZETTEN</small></div>
+				<div><span id="timer">00:00</span><small>TIJD</small></div>
+			</div>
+		</section>
+
+		<section class="play-area" aria-label="Rubik's Cube spel">
+			<div class="stage" id="stage">
+				<svg class="orbit-guide" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+					<defs>
+						<linearGradient id="orbit-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" stop-color="#ff4d6d" />
+							<stop offset="28%" stop-color="#ffe04b" />
+							<stop offset="52%" stop-color="#45d483" />
+							<stop offset="76%" stop-color="#5478ff" />
+							<stop offset="100%" stop-color="#d65cff" />
+						</linearGradient>
+						<marker id="orbit-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto" opacity="0.55">
+							<path d="M 0 0 L 10 5 L 0 10 Z" fill="url(#orbit-gradient)" />
+						</marker>
+						<path id="orbit-label-path" d="M 200 40 A 160 160 0 1 1 199.99 40" />
+					</defs>
+					<circle class="orbit-ring" cx="200" cy="200" r="160" />
+					<path class="orbit-arrow" d="M 360 200 A 160 160 0 0 1 200 360" marker-end="url(#orbit-arrowhead)" />
+					<text class="orbit-label">
+						<textPath href="#orbit-label-path" startOffset="5%">REPOSITION CUBE</textPath>
+					</text>
+				</svg>
+				<div class="cube" id="cube-view" aria-label="3D Rubik's Cube" role="img"></div>
+				<div class="stage-shadow" aria-hidden="true"></div>
+			</div>
+			<div class="stage-actions">
+				<button class="outline-button" id="scramble" type="button"><span>↝</span> SCRAMBLE</button>
+				<button class="outline-button" id="reset" type="button"><span>↺</span> RESET</button>
+			</div>
+			<p class="hint"><span class="mouse-icon">⌁</span> SLEEP OM TE DRAAIEN <b>·</b> KLIK OP EEN VLAK OF GEBRUIK TOETSEN</p>
+		</section>
+
+		<aside class="controls">
+			<div class="panel-heading"><span>MOVE SET</span><small>AZERTY / TOUCH</small></div>
+			<div class="move-grid" id="move-buttons">
+				<button data-move="U" type="button"><b>A</b><small>UP</small></button>
+				<button data-move="D" type="button"><b>Z</b><small>DOWN</small></button>
+				<button data-move="L" type="button"><b>E</b><small>LEFT</small></button>
+				<button data-move="R" type="button"><b>Q</b><small>RIGHT</small></button>
+				<button data-move="F" type="button"><b>S</b><small>FRONT</small></button>
+				<button data-move="B" type="button"><b>D</b><small>BACK</small></button>
+				<button data-move="M" type="button"><b>W</b><small>MIDDLE</small></button>
+				<button data-move="E" type="button"><b>X</b><small>EQUATOR</small></button>
+				<button data-move="S" type="button"><b>C</b><small>STANDING</small></button>
+			</div>
+			<div class="control-note"><span class="keycap">SHIFT</span> reverse <span class="keycap">2</span> double move</div>
+			<div class="legend">
+				<div><i class="dot dot-white"></i> UPPER</div><div><i class="dot dot-yellow"></i> DOWN</div>
+				<div><i class="dot dot-red"></i> FRONT</div><div><i class="dot dot-orange"></i> BACK</div>
+				<div><i class="dot dot-blue"></i> LEFT</div><div><i class="dot dot-green"></i> RIGHT</div>
+			</div>
+		</aside>
+	</main>
+	<footer><span>© 2026 TOM LAMERS</span><span>BUILT WITH HTML · CSS · JAVASCRIPT</span></footer>
+	<script src="app.js"></script>
+</body>
+</html>
